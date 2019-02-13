@@ -40,16 +40,16 @@ console.log(
     ]
   )(character)
 );
-// [ 55392, 56951 ]
+// => [ 55392, 56951 ]
 
 // https://unicodebook.readthedocs.io/unicode_encodings.html#utf-16-surrogate-pairs
-function encodeToUTF16Pair(char) {
-  const code = char - 0x10000;
+function encodeUTF16Pair(character) {
+  const code = character - 0x10000;
   return [
     0xD800 + (code >> 10),
     0xDC00 + (code & 0x3FF)
   ];
 }
 
-console.log(encodeToUTF16Pair(0x28277));
-// [ 55392, 56951 ]
+console.log(encodeUTF16Pair(0x28277));
+// => [ 55392, 56951 ]
