@@ -46,8 +46,8 @@ console.log(
 function encodeUTF16Pair(character) {
   const code = character - 0x10000;
   return [
-    0xD800 + (code >> 10),
-    0xDC00 + (code & 0x3FF)
+    0xD800 | (code >> 10),
+    0xDC00 | (code & 0x3FF)
   ];
 }
 
